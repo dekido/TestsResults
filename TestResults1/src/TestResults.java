@@ -5,6 +5,8 @@ import java.text.DecimalFormat;
 // Opens a file of test scores and calls processScores to read and evaluate them.
 public class TestResults {
 	public final static String filename = "testScores.txt";
+	final static int PASSING = 70;
+	
 
 	// Driver to open test file and call student-written method to process scores.
 	public static void main(String[] args) {
@@ -24,8 +26,27 @@ public class TestResults {
 		DecimalFormat df = new DecimalFormat("00.0");	// For outputing test average
 		System.out.println("Name           Avg  Pass");
 		System.out.println("------------------------");
-
-		while(file.hasNextLine()){
+		int average = 0;
+		int numScores = -1;
+		
+		while(file.hasNext()){
+			String name = file.next();
+			System.out.println(name);
+			int space = 15 - name.length();
+			for(int i = 0; i <= space; i++){
+				System.out.println(" ");
+			while(file.hasNextInt()){
+				int sum = 0;
+				sum += file.nextInt();
+				if(file.hasNextInt()){
+					numScores++;
+				}
+				System.out.print(sum/numScores);
+			}
+				
+				
+			}
+			
 		}
 	}
 }
