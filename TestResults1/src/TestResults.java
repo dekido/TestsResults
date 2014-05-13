@@ -36,8 +36,10 @@ public class TestResults {
 			for(int i = 0; i <= space; i++){
 				System.out.println(" ");
 			while(file.hasNextInt()){
+//				Every time you repeat this loop, your sum is going to be zero...
 				int sum = 0;
 				sum += file.nextInt();
+//				you are already checking if there is a next in the while loop...
 				if(file.hasNextInt()){
 					numScores++;
 				}
